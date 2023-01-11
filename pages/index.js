@@ -52,7 +52,7 @@ export default function Home() {
               <li>
                 <BsFillMoonFill onClick ={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl dark:text-white"/>
               </li>
-              <li><a className="bg-gradient-to-br from-cyan-400 to-blue-600 hover:from-blue-600 hover:to-black text-white px-4 py-2 rounded-md ml-8" href="Resume.pdf" target="_blank">Resume</a></li>
+              <li><a className="bg-gradient-to-br from-cyan-400 to-blue-600 hover:from-blue-600 hover:to-black text-white px-4 py-2 rounded-md ml-8" href="Resume.pdf" target="_blank" rel="noreferrer">Resume</a></li>
             </ul>
           </nav>
 
@@ -68,10 +68,10 @@ export default function Home() {
           </div>
 
           <div className="flex text-5xl justify-center gap-16 py-3 mt-20 text-gray-600 dark:text-white">
-            <a href="https://github.com/HenryMarken" target="_blank">
+            <a href="https://github.com/HenryMarken" target="_blank" rel="noreferrer">
               <AiFillGithub/>
             </a>
-            <a href="https://www.linkedin.com/in/henry-marken/" target="_blank">
+            <a href="https://www.linkedin.com/in/henry-marken/" target="_blank" rel="noreferrer">
               <AiFillLinkedin/>
             </a>
           </div>
@@ -206,7 +206,7 @@ export default function Home() {
                 </div>
                 <div className="form-group mb-6">
                   <label  className="float-left">Message</label>
-                  <textarea id="message" name="message" className="form-control block w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid rounded transition ease-in-out m-0 focus:bg-white focus:border-blue-600 focus:outline-none dark:bg-gray-900 dark:border-slate-700 " id="exampleFormControlTextarea13" rows="10"></textarea>
+                  <textarea id="message" name="message" className="form-control block w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid rounded transition ease-in-out m-0 focus:bg-white focus:border-blue-600 focus:outline-none dark:bg-gray-900 dark:border-slate-700 " rows="10"></textarea>
                   <ValidationError prefix="Message" field="message" errors={state.errors}/>
                 </div>
                 <button type="submit" onClick={handleClick} disabled={state.submitting} className="w-full px-6 py-2.5 border dark:border-slate-700 dark:text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
