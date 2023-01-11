@@ -24,12 +24,4 @@ a {
   src:url("../public//Burtons.otf");
 }
 
-.map-container {
-  height: 700px;
-  z-index: -1;
-}
-
-.map-style {
-  background: hsla(0, 0%, 100%, 0.55);
-  backdrop-filter: blur(30px)
-}
+@media 

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {BsFillMoonStarsFill} from 'react-icons/bs';
+import {BsFillMoonFill} from 'react-icons/bs';
 import {AiFillGithub, AiFillLinkedin, AiFillYoutube} from 'react-icons/ai';
 import design from "../public/design.png";
 import Image from "next/image"
@@ -13,11 +13,21 @@ import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
 import {useState} from "react";
 import {Progress} from "flowbite-react"
+import { useForm, ValidationError } from '@formspree/react';
 
-
+  
 
 export default function Home() {
   const [darkMode,setDarkMode] = useState(false);
+  const [state, handleSubmit] = useForm("mqkokjga"); 
+  const handleClick = () => {
+    setTimeout(() => {
+      const frm = document.getElementsByName("contact-form")[0];
+      alert("Thank you! I will get back to you as soon as I can.");
+      frm.reset();
+    }, 100);
+  };
+
   return (
     <div className={darkMode ? "dark" : "" }>
       <Head>
@@ -40,7 +50,7 @@ export default function Home() {
             </div>
             <ul className="flex items-center">
               <li>
-                <BsFillMoonStarsFill onClick ={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl dark:text-white"/>
+                <BsFillMoonFill onClick ={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl dark:text-white"/>
               </li>
               <li><a className="bg-gradient-to-br from-cyan-400 to-blue-600 hover:from-blue-600 hover:to-black text-white px-4 py-2 rounded-md ml-8" href="Resume.pdf" target="_blank">Resume</a></li>
             </ul>
@@ -53,7 +63,7 @@ export default function Home() {
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">Hi, I am an QC Test E.I.T at Profire Energy who graduated from the Unviversity of Alberta wtih a BSc in Electircal and Computer Engineering. I am a highly-motivated, self taught web developer seeking to launch my career in web development</p>
           </div>
           
-          <div className="relative mx-auto bg-gradient-to-b from-sky-500 rounded-full w-80 h-80 mt-5 overflow-hidden md:h-96 md:w-96">
+          <div className="relative mx-auto bg-gradient-to-b from-sky-500 rounded-full  w-80 h-80 mt-5 overflow-hidden md:h-96 md:w-96">
             <img src="profilepic.png" className="mt-2"></img>
           </div>
 
@@ -64,7 +74,6 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/henry-marken/" target="_blank">
               <AiFillLinkedin/>
             </a>
-            <AiFillYoutube/>
           </div>
         </section>
         
@@ -72,9 +81,7 @@ export default function Home() {
         <section>
         <div className="dark:text-white">
             <h3 id="skills" className="text-3xl py-1 text-center">Skills</h3>
-            <p className="text-md py-2 leading-8  text-center md:text-xl max-w-xl mx-auto ">
-              Since the beginning of my journey as a freelance designer developer, I've done remote work for consulted for a collaborated with talanted people to create digital products for both business and consumer use.
-            </p>
+            <p className="text-md py-2 leading-8  text-center md:text-xl max-w-xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptates nobis voluptatem delectus quidem fuga ab reprehenderit vero alias id doloremque tempora similique saepe odit quaerat tenetur, consectetur cupiditate repellendus!</p>
           </div>
           <div className="lg:flex lg:grow gap-10">
             <div className="text-center shadow-2xl p-10 rounded-xl my-10 dark:text-white grow">
@@ -136,39 +143,47 @@ export default function Home() {
                   Tailwind CSS
               </div>
               <Progress progress={70}  size="xl"/>
-              <div className="text-xl  text-left">
-                  Bootstrap
-              </div>
-              <Progress progress={70}  size="xl"/>
             </div>
           </div>
         </section>
         <section>
-          <div className="dark:text-white text-center">
-            <h3 id="projects" className="text-3xl py-1">Projects</h3>
-            <p className="text-md py-2 leading-8 md:text-xl max-w-xl mx-auto">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nam ex impedit perspiciatis saepe consectetur debitis. Iusto pariatur ut, deserunt veniam dolore repellat unde odio? Soluta atque ad officiis aspernatur?
-            </p>
-            
-          </div>
-          <div className=" flex flex-col gap-10 py-10 text-center lg:flex-row lg:flex-wrap dark:text-white">
-            <div className="basis-1/3 flex-1">
-              <h2 className="text-xl font-bold ">PhotoFinder</h2>
-              <a href="https://photofinder.onrender.com/" target="_blank" rel="noreferrer">           
-                <Image src={project1} className="rounded-lg object-cover grayscale blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
-              </a>
+          <div className="pt-20">
+            <div className="dark:text-white text-center">
+              <h3 id="projects" className="text-3xl py-1">Projects</h3>
+              <p className="text-md py-2 leading-8 md:text-xl max-w-xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nam ex impedit perspiciatis saepe consectetur debitis. Iusto pariatur ut, deserunt veniam dolore repellat unde odio? Soluta atque ad officiis aspernatur?</p>  
             </div>
-            <div className="basis-1/3 flex-1 mt-20">
-              <h2 className="text-xl font-bold">Fantasy League Drafter</h2>
-              <a href="https://github.com/HenryMarken/FantasyLeague" target="_blank" rel="noreferrer">
-                <Image src={project2} className="rounded-lg object-cover grayscale blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
-              </a>
+            <div className=" flex flex-col gap-10 py-10 text-center md:flex-row md:flex-wrap dark:text-white">
+              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 leading-8  text-center md:text-xl max-w-xl mx-auto">
+                <h2 className="text-xl font-bold">PhotoFinder</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In illum molestias ipsum officia nobis fugiat et aut rem veritatis labore, earum doloremque dolor culpa optio beatae blanditiis sunt nemo tempore.</p>
+              </div>
+              <div className="basis-1/2 flex-1 max-w-4xl mx-auto w-full">
+                <a href="https://photofinder.onrender.com/" target="_blank" rel="noreferrer">           
+                  <Image src={project1} className="rounded-lg object-cover grayscale blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
+                </a>
+              </div>
             </div>
-            <div className="basis-1/2 flex-1 max-w-screen-lg mx-auto mt-20">
-              <h2 className="text-xl font-bold">iPhone Gimbal</h2>
-              <a href="https://github.com/josheen/GimbalProject" target="_blank" rel="noreferrer">  
-                <Image src={project3} className="rounded-lg object-cover grayscale blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
-              </a>
+            <div className=" flex flex-col gap-10 py-10 text-center md:flex-row md:flex-wrap dark:text-white">
+              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 leading-8  text-center md:text-xl max-w-xl mx-auto md:">
+                <h2 className="text-xl font-bold">Fantasy League Drafter</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In illum molestias ipsum officia nobis fugiat et aut rem veritatis labore, earum doloremque dolor culpa optio beatae blanditiis sunt nemo tempore.</p>
+              </div>
+              <div className="basis-1/2 flex-1 max-w-4xl mx-auto w-full">
+                <a href="https://github.com/HenryMarken/FantasyLeague" target="_blank" rel="noreferrer">           
+                  <Image src={project2} className="rounded-lg object-cover grayscale blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
+                </a>
+              </div>
+            </div>
+            <div className=" flex flex-col gap-10 py-10 text-center md:flex-row md:flex-wrap dark:text-white">
+              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 leading-8  text-center md:text-xl max-w-xl mx-auto">
+                <h2 className="text-xl font-bold">iPhone Gimbal</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In illum molestias ipsum officia nobis fugiat et aut rem veritatis labore, earum doloremque dolor culpa optio beatae blanditiis sunt nemo tempore.</p>
+              </div>
+              <div className="basis-1/2 flex-1 max-w-4xl mx-auto w-full">
+                <a href="https://github.com/josheen/GimbalProject" target="_blank" rel="noreferrer">           
+                  <Image src={project3} className="rounded-lg object-cover grayscale blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -179,24 +194,22 @@ export default function Home() {
             {/* Contact Form */}
             <div className="text-center shadow-2xl p-10 rounded-xl my-10 lg:max-w-screen-lg dark:text-white grow">
               <h2 className="text-3xl font-bold mb-12">Contact Me</h2>
-              <form>
+              <form onSubmit={handleSubmit} name="contact-form">
                 <div className="form-group mb-6">
-                  <h2 className="text-left">Name</h2>
-                  <input type="text" className="md:h-16 form-control block w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid rounded transition ease-in-out m-0 focus:bg-white focus:border-blue-600 focus:outline-none dark:bg-gray-900 dark:border-slate-700  " id="exampleInput7" />
-                </div>
-                <div className="form-group mb-6">
-                  <h2 className="text-left">Email</h2>
-                  <input type="email" className="md:h-16 form-control block w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid rounded transition ease-in-out m-0 focus:bg-white focus:border-blue-600 focus:outline-none dark:bg-gray-900 dark:border-slate-700 " id="exampleInput8"/>
+                  <label for="full-name" className="float-left">Name</label>
+                  <input id="full-name" name="name" type="text" className="md:h-16 form-control block w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid rounded transition ease-in-out m-0 focus:bg-white focus:border-blue-600 focus:outline-none dark:bg-gray-900 dark:border-slate-700"  />
                 </div>
                 <div className="form-group mb-6">
-                  <h2 className="text-left">Message</h2>
-                  <textarea className="form-control block w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid rounded transition ease-in-out m-0 focus:bg-white focus:border-blue-600 focus:outline-none dark:bg-gray-900 dark:border-slate-700 " id="exampleFormControlTextarea13" rows="10"></textarea>
+                  <label htmlFor="email" className="float-left">Email</label>
+                  <input id="email" type="email" name="email" className="md:h-16 form-control block w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid rounded transition ease-in-out m-0 focus:bg-white focus:border-blue-600 focus:outline-none dark:bg-gray-900 dark:border-slate-700" />
+                  <ValidationError prefix="Email" field="email" errors={state.errors}/>
                 </div>
-                <div className="form-group form-check text-center mb-6">
-                  <input type="checkbox" className="form-check-input appearance-none h-4 w-4 border rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer" id="exampleCheck87" checked/>
-                  <label className="form-check-label inline-block " for="exampleCheck87">Send me a copy of this message</label>
+                <div className="form-group mb-6">
+                  <label  className="float-left">Message</label>
+                  <textarea id="message" name="message" className="form-control block w-full px-3 py-1.5 text-base font-normal bg-white bg-clip-padding border border-solid rounded transition ease-in-out m-0 focus:bg-white focus:border-blue-600 focus:outline-none dark:bg-gray-900 dark:border-slate-700 " id="exampleFormControlTextarea13" rows="10"></textarea>
+                  <ValidationError prefix="Message" field="message" errors={state.errors}/>
                 </div>
-                <button type="submit" className="w-full px-6 py-2.5 border dark:border-slate-700 dark:text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                <button type="submit" onClick={handleClick} disabled={state.submitting} className="w-full px-6 py-2.5 border dark:border-slate-700 dark:text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
                   Send
                 </button>
               </form>
@@ -230,6 +243,6 @@ export default function Home() {
 
  
     </div>
-  )
+  );
 }
 
