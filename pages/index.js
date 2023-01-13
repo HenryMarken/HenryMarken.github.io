@@ -8,11 +8,13 @@ import consulting from "../public/consulting.png";
 import project1 from "../public/project1.png";
 import project2 from "../public/project2.png";
 import project3 from "../public/project3.png";
+import project4 from "../public/project4.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
 import {useState} from "react";
 import {Progress} from "flowbite-react"
+import {Alert} from "flowbite-react"
 import { useForm, ValidationError } from '@formspree/react';
 
   
@@ -43,16 +45,16 @@ export default function Home() {
          {/* NavBar */}
           <nav className="py-10 mb-12 flex justify-between"> 
             <div className="flex justify-center dark:text-white">
-              <h1 className="font-burtons pr-5 mt-1 ">HM</h1>    
-              <a href="#skills" className="px-5 text-xl">Skills</a> 
-              <a href="#projects" className="px-5 text-xl">Projects</a>
-              <a href="#contact" className="px-5 text-xl">Contact</a>
+              <h1 className="font-burtons md:pr-5 pr-2 mt-1 -ml-10 md:ml-0  ">HM</h1>    
+              <a href="#skills" className="md:px-5 px-2 md:text-xl">Skills</a> 
+              <a href="#projects" className="md:px-5 px-2 md:text-xl">Projects</a>
+              <a href="#contact" className="md:px-5 px-2 md:text-xl">Contact</a>
             </div>
-            <ul className="flex items-center">
+            <ul className="flex items-center ml-5 md:ml-0">
               <li>
-                <BsFillMoonFill onClick ={() => setDarkMode(!darkMode)} className="cursor-pointer text-xl dark:text-white"/>
+                <BsFillMoonFill onClick ={() => setDarkMode(!darkMode)} className="cursor-pointer md:text-xl ml-2 dark:text-white"/>
               </li>
-              <li><a className="bg-gradient-to-br from-cyan-400 to-blue-600 hover:from-blue-600 hover:to-black text-white px-4 py-2 rounded-md ml-8" href="Resume.pdf" target="_blank" rel="noreferrer">Resume</a></li>
+              <li><a className="bg-gradient-to-br from-cyan-400 to-blue-600 hover:from-blue-600 hover:to-black text-white md:px-4 md:py-2 px-2 py-1 rounded-md ml-4 md:ml-8 text-s md:text-xl" href="Resume.pdf" target="_blank" rel="noreferrer">Resume</a></li>
             </ul>
           </nav>
 
@@ -60,10 +62,10 @@ export default function Home() {
           <div className="text-center p-10 "> 
             <h2 className="text-5xl py-2 bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent font-medium md:text-6xl">Henry Marken</h2>
             <h3 className="text-2xl py-2 md:text-3xl dark:text-white">Electrical Engineer and Self-Taught Developer</h3>
-            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl max-w-xl mx-auto dark:text-white">Hi, I am an QC Test E.I.T at Profire Energy who graduated from the Unviversity of Alberta wtih a BSc in Electircal and Computer Engineering. I am a highly-motivated, self taught web developer seeking to launch my career in web development</p>
+            <p className=" text-md py-5 leading-8 text-gray-800 md:text-2xl max-w-xl mx-auto dark:text-white md:leading-10">Hi, I am a QC Test E.I.T at Profire Energy who graduated from the Unviversity of Alberta wtih a BSc in Electircal and Computer Engineering. I am a highly-motivated, self taught web developer seeking to start a career in web development.</p>
           </div>
           
-          <div className="relative mx-auto bg-gradient-to-b from-sky-500 rounded-full  w-80 h-80 mt-5 overflow-hidden md:h-96 md:w-96">
+          <div className="relative mx-auto bg-gradient-to-b from-sky-500 rounded-full  w-64 h-64 sm:w-80 sm:h-80 mt-5 overflow-hidden md:h-96 md:w-96">
             <img src="profilepic.png" className="mt-2"></img>
           </div>
 
@@ -78,71 +80,67 @@ export default function Home() {
         </section>
         
         {/* Skills */}
-        <section>
+        <section id="skills">
         <div className="dark:text-white">
-            <h3 id="skills" className="text-3xl py-1 text-center">Skills</h3>
-            <p className="text-md py-2 leading-8  text-center md:text-xl max-w-xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptates nobis voluptatem delectus quidem fuga ab reprehenderit vero alias id doloremque tempora similique saepe odit quaerat tenetur, consectetur cupiditate repellendus!</p>
+            <h3  className="text-3xl py-1 text-center">Skills</h3>
+            <p className="text-md py-2 leading-8 mb-10 text-center md:text-2xl max-w-xl mx-auto md:leading-10">Aside from the electrical engineering skills I have gained in my degree I have also worked towards learning skills in web development. I have branched out my skills based on my interest in web development and also using my background to learn more software skills related to electrical engineering such as embedded systems.</p>
           </div>
           <div className="lg:flex lg:grow gap-10">
-            <div className="text-center shadow-2xl p-10 rounded-xl my-10 dark:text-white grow">
-              <img src="programming.png" className="max-w-xs h-auto mx-auto scale-50 lg:scale-75"></img>
+            <div className="text-center shadow-2xl p-10 rounded-xl my-10 dark:text-white grow mx-auto">
+              <img src="programming.png" className="max-w-xs w-48 h-48 md:w-80 md:h-80 mx-auto"></img>
               <h3 className="text-lg font-medium pb-2"> Programming Languages</h3>
               <div className="text-xl  text-left">
                   Javascript
               </div>
-              <Progress progress={75}  size="xl"/>
+              <Progress progress={65} size="lg" label="Intermediate" labelPosition="inside" />
               <div className="text-xl  text-left">
                   HTML
               </div>
-              <Progress progress={90}  size="xl"/>
+              <Progress progress={80}  size="lg"  label="Advanced" labelPosition="inside" />
               <div className="text-xl  text-left">
                   CSS
               </div>
-              <Progress progress={90}  size="xl"/>
+              <Progress progress={80}  size="lg"  label="Advanced" labelPosition="inside"/>
               <div className="text-xl  text-left">
                   Python
               </div>
-              <Progress progress={70}  size="xl"/>
+              <Progress progress={65}  size="lg"  label="Intermediate" labelPosition="inside"/>
               <div className="text-xl  text-left">
                   C
               </div>
-              <Progress progress={80}  size="xl"/>
+              <Progress progress={70}  size="lg"  label="Intermediate" labelPosition="inside"/>
               <div className="text-xl  text-left">
                   C++
               </div>
-              <Progress progress={70}  size="xl"/>
+              <Progress progress={60}  size="lg"  label="Intermediate" labelPosition="inside"/>
             </div>
-            <div className="text-center shadow-2xl p-10 rounded-xl my-10 dark:text-white grow">
-            <img src="framework.png" className="max-w-xs h-auto mx-auto scale-50 lg:scale-75"></img>
+            <div className="text-center shadow-2xl p-10 rounded-xl my-10 dark:text-white grow mx-auto">
+            <img src="framework.png" className="max-w-xs w-48 h-48 md:w-80 md:h-80 mx-auto"></img>
               <h3 className="text-lg font-medium pb-2">Frameworks and Dev Tools</h3>
-              <div className="text-xl  text-left">
-                  Node
-              </div>
-              <Progress progress={75}  size="xl"/>
               <div className="text-xl  text-left">
                   React
               </div>
-              <Progress progress={90}  size="xl"/>
+              <Progress progress={65}  size="lg"  label="Intermediate" labelPosition="inside"/>
+              <div className="text-xl  text-left">
+                  Node
+              </div>
+              <Progress progress={60}  size="lg"  label="Intermediate" labelPosition="inside"/>
               <div className="text-xl  text-left">
                   Express
               </div>
-              <Progress progress={90}  size="xl"/>
-              <div className="text-xl  text-left">
-                  Pandas
-              </div>
-              <Progress progress={70}  size="xl"/>
+              <Progress progress={60}  size="lg"  label="Intermediate" labelPosition="inside"/>
               <div className="text-xl  text-left">
                   MongoDB
               </div>
-              <Progress progress={80}  size="xl"/>
+              <Progress progress={65}  size="lg"  label="Intermediate" labelPosition="inside"/>
               <div className="text-xl  text-left">
                   Bootstrap
               </div>
-              <Progress progress={70}  size="xl"/>
+              <Progress progress={80}  size="lg"  label="Advanced" labelPosition="inside"/>
               <div className="text-xl  text-left">
                   Tailwind CSS
               </div>
-              <Progress progress={70}  size="xl"/>
+              <Progress progress={80}  size="lg"  label="Advanced" labelPosition="inside"/>
             </div>
           </div>
         </section>
@@ -150,38 +148,68 @@ export default function Home() {
           <div className="pt-20">
             <div className="dark:text-white text-center">
               <h3 id="projects" className="text-3xl py-1">Projects</h3>
-              <p className="text-md py-2 leading-8 md:text-xl max-w-xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nam ex impedit perspiciatis saepe consectetur debitis. Iusto pariatur ut, deserunt veniam dolore repellat unde odio? Soluta atque ad officiis aspernatur?</p>  
+              <p className="text-md py-2 leading-8 md:text-2xl max-w-xl mx-auto mb-10 md:leading-10">In my spare time after work, I design and create projects keeping an open mind set on trying new tools to learn new technical skills and integrate these skills into my life and grow my skill set.</p>  
             </div>
             <div className=" flex flex-col gap-10 py-10 text-center md:flex-row md:flex-wrap dark:text-white">
-              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 leading-8  text-center md:text-xl max-w-xl mx-auto">
-                <h2 className="text-xl font-bold">PhotoFinder</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In illum molestias ipsum officia nobis fugiat et aut rem veritatis labore, earum doloremque dolor culpa optio beatae blanditiis sunt nemo tempore.</p>
+              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 md:px-0 leading-8 md:leading-10 text-center md:text-xl max-w-xl mx-auto">
+                <h2 className="text-xl md:text-3xl font-bold my-5">PhotoFinder</h2>
+                <p>I always found myself forgetting good photo locations that I have been to before. This web application was built to help me document the various photo locations I have been to and share them among others with a preview of pictures of the location.</p>
+                <ul className="flex items-center justify-between mt-5 text-slate-500 dark:text-slate-400">
+                  <li>Node</li>
+                  <li>MongoDB</li>
+                  <li>Express</li>
+                </ul>
               </div>
               <div className="basis-1/2 flex-1 max-w-4xl mx-auto w-full">
                 <a href="https://photofinder.onrender.com/" target="_blank" rel="noreferrer">           
-                  <Image src={project1} className="rounded-lg object-cover grayscale blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
+                  <Image src={project1} className="rounded-lg object-cover sm:grayscale sm:blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
                 </a>
               </div>
             </div>
             <div className=" flex flex-col gap-10 py-10 text-center md:flex-row md:flex-wrap dark:text-white">
-              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 leading-8  text-center md:text-xl max-w-xl mx-auto md:">
-                <h2 className="text-xl font-bold">Fantasy League Drafter</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In illum molestias ipsum officia nobis fugiat et aut rem veritatis labore, earum doloremque dolor culpa optio beatae blanditiis sunt nemo tempore.</p>
+              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 md:px-0 leading-8 md:leading-10 text-center md:text-xl max-w-xl mx-auto">
+                <h2 className="text-xl md:text-3xl font-bold my-5">Naruto Quiz</h2>
+                <p>One of my first web applications. I started this project to learn the basics of HTML CSS and JavaScript and to showcase one of my favourite animes! This project helped me learn DOM manipulation and CSS styling with the use of Sass.</p>
+                <ul className="flex items-center justify-between mt-5 text-slate-500 dark:text-slate-400">
+                  <li>JavaScript</li>
+                  <li>Sass</li>
+                  <li>HTML</li>
+                </ul>
+              </div>
+              <div className="basis-1/2 flex-1 max-w-4xl mx-auto w-full">
+                <a href="https://naruto-quiz.netlify.app/" target="_blank" rel="noreferrer">           
+                  <Image src={project4} className="rounded-lg object-cover sm:grayscale sm:blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
+                </a>
+              </div>
+            </div>
+            <div className=" flex flex-col gap-10 py-10 text-center md:flex-row md:flex-wrap dark:text-white">
+              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 md:px-0 leading-8 md:leading-10 text-center md:text-xl max-w-xl mx-auto">
+                <h2 className="text-xl md:text-3xl font-bold my-5">Fantasy League Drafter</h2>
+                <p>Not the best person when it comes to fantasy leagues so I decided why not use my programming skills to finally win! I built a Python application to parse an ESPN pre-season stat sheet and order players by most fantasy points earned based on my leagues rules. Winning my fantasy league clearly showed it work! </p>
+                <ul className="flex items-center justify-between mt-5 text-slate-500 dark:text-slate-400">
+                  <li>Python</li>
+                  <li>Pandas</li>
+                </ul>
               </div>
               <div className="basis-1/2 flex-1 max-w-4xl mx-auto w-full">
                 <a href="https://github.com/HenryMarken/FantasyLeague" target="_blank" rel="noreferrer">           
-                  <Image src={project2} className="rounded-lg object-cover grayscale blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
+                  <Image src={project2} className="rounded-lg object-cover sm:grayscale sm:blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
                 </a>
               </div>
             </div>
             <div className=" flex flex-col gap-10 py-10 text-center md:flex-row md:flex-wrap dark:text-white">
-              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 leading-8  text-center md:text-xl max-w-xl mx-auto">
-                <h2 className="text-xl font-bold">iPhone Gimbal</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In illum molestias ipsum officia nobis fugiat et aut rem veritatis labore, earum doloremque dolor culpa optio beatae blanditiis sunt nemo tempore.</p>
+              <div className="basis-1/2 flex-1 my-auto md:text-2xl text-md py-2 px-10 md:px-0 leading-8 md:leading-10 text-center md:text-xl max-w-xl mx-auto">
+                <h2 className="text-xl md:text-3xl font-bold my-5">iPhone Gimbal</h2>
+                <p>As my groups capstone project we created a three-axis electronic gimbal for the University of Alberta Photography Club. This project helped me learn embedded system design, real-time operating systems, and UX development</p>
+                <ul className="flex items-center justify-between mt-5 text-slate-500 dark:text-slate-400">
+                  <li>C</li>
+                  <li>RTOS</li>
+                  <li>Electrical <br/> Hardware <br/> Design</li>
+                </ul>
               </div>
               <div className="basis-1/2 flex-1 max-w-4xl mx-auto w-full">
                 <a href="https://github.com/josheen/GimbalProject" target="_blank" rel="noreferrer">           
-                  <Image src={project3} className="rounded-lg object-cover grayscale blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
+                  <Image src={project3} className="rounded-lg object-cover sm:grayscale sm:blur-sm duration-200 hover:grayscale-0 hover:blur-none" width={'100%'} height={'100%'} layout="responsive" />
                 </a>
               </div>
             </div>
@@ -237,11 +265,7 @@ export default function Home() {
 
           </div>
         </section>
-  
-        
       </main>
-
- 
     </div>
   );
 }
